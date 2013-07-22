@@ -32,10 +32,10 @@ for file in files:
 		# Make a Wand object from our current file
 		screen_image = Image(filename=file)
 		# Coordinates for where we composite
-		comp_header = 0
-		comp_footer = screen_image.height - footer_image.height
+		offset_header = 0
+		offset_footer = screen_image.height - footer_image.height
 		# Do the compositing of header and footer onto the screen image
-		screen_image.composite(header_image, 0, comp_header)
-		screen_image.composite(footer_image, 0, comp_footer)
+		screen_image.composite(header_image, 0, offset_header)
+		screen_image.composite(footer_image, 0, offset_footer)
 		# Export appended image comp
 		screen_image.save(filename=file)
